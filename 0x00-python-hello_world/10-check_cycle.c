@@ -8,21 +8,10 @@
  */
 int check_cycle(listint_t *list)
 {
-	/*char *e_rr = "malloc failled";*/
-	listint_t *slow, *fast;
+	/*listint_t *slow, *fast;
 
 	slow = malloc(sizeof(listint_t));
-	/*if (!slow)
-	{
-		printf("%s\n", e_rr);
-		return (0);
-	}*/
 	fast = malloc(sizeof(listint_t));
-	/*if (!fast)
-	{
-		printf("%s\n", e_rr);
-		return (0);
-	}*/
 	fast = list;
 	slow = list;
 	while (slow && fast->next->next && slow->next)
@@ -31,6 +20,18 @@ int check_cycle(listint_t *list)
 		if (slow == fast)
 			return (1);
 		slow = slow->next;
+	}
+	return (0);*/
+	listint_t *fast;
+
+	fast = malloc(sizeof(listint_t));
+	fast = list;
+	while (list && list->next && fast->next->next)
+	{
+		fast = fast->next->next;
+		if (list == fast->next->next)
+			return (1);
+		list = list->next;
 	}
 	return (0);
 }
