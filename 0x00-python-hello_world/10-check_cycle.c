@@ -24,7 +24,7 @@ int check_cycle(listint_t *list)
 	return (0);*/
 	listint_t *fast;
 
-	fast = malloc(sizeof(listint_t));
+	/*fast = malloc(sizeof(listint_t));*/
 	fast = list;
 	while (list && list->next && fast->next->next)
 	{
