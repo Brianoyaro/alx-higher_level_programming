@@ -9,4 +9,4 @@ if __name__ == "__main__":
     a = 1
     b = 2
     c = add(a, b)
-    print("{} + {} = {}".format(a, b, c))
+    print("{0:d} + {1:d} = {2:d}".format(a, b, c))
