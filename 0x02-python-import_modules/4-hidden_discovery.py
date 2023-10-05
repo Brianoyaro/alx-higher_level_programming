@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import hidden_4
-if __name__ == "__main_":
-    names = dir(hidden_4)
-    snames = sorted(name for name in names if not name.startswith("__"))
-    for name in snames:
-        print(name)
+if __name__ == "__main__":
+    ls = dir(hidden_4)
+    for i in ls:
+        if i[0] != '_' and i[1] != '_':
+            print(i)
