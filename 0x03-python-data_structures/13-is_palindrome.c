@@ -1,5 +1,10 @@
 #include "lists.h"
 #include <stdio.h>
+/**
+ * node_number - finds number of nodes in a linked list
+ * @head: head pointer of the linked list
+ * Return: number of nodes in the linked list
+ */
 int node_number(listint_t *head)
 {
 	int n = 0;
@@ -13,6 +18,12 @@ int node_number(listint_t *head)
 	}
 	return (n);
 }
+/**
+ * firstnodeend - finds specified node at h1
+ * @head: head node of linked list
+ * @h1: node number to find
+ * Return: node at h1
+ */
 listint_t *firstnodeend(listint_t *head, int h1)
 {
 	int n = 1;
@@ -26,6 +37,12 @@ listint_t *firstnodeend(listint_t *head, int h1)
 	}
 	return (current);
 }
+/**
+ * reverse - reverses a linked list
+ * @head: head nonde of linked list
+ * @h1: itteration stop while reversing
+ * Return: pointer to first node of reversed list
+ */
 listint_t *reverse(listint_t **head, int h1)
 {
 	listint_t *prev, *curr, *latter;
@@ -46,6 +63,12 @@ listint_t *reverse(listint_t **head, int h1)
 	print_listint(prev);*/
 	return (curr);
 }
+/**
+ * is_palindrome - checks if a linked list is a palindrome
+ * @head: head of list
+ * Return: 1 if list is a palindrome
+ * else 0 if list is not a palindrome
+ */
 int is_palindrome(listint_t **head)
 {
 	int h1 = 0, h2 = 0, nodes = 0;
