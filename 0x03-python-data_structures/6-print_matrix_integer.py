@@ -8,6 +8,6 @@ def print_matrix_integer(matrix=[[]]):
         for j in range(ln2):
             length = ln2 - 1
             if (j < length):
-                print("{}".format(matrix[i][j]), end=' ')
+                print("{:d}".format(matrix[i][j]), end=' ')
             else:
-                print("{}".format(matrix[i][j]))
+                print("{:d}".format(matrix[i][j]))
