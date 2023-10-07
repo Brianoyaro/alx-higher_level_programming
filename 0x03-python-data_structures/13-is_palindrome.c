@@ -1,108 +1,80 @@
 #include "lists.h"
-#include <stdio.h>
 /**
- * node_number - finds number of nodes in a linked list
- * @head: head pointer of the linked list
- * Return: number of nodes in the linked list
+ * copy - creates a copy of a linked list
+ * @head: headnode of list to copy
+ * Return: created list copy
  */
-int node_number(listint_t *head)
+listint_t *copy(listint_t **head)
 {
-	int n = 0;
-	listint_t *current;
+	listint_t *head2, *tmp;
 
-	current = head;
-	while (current)
+	head2 = NULL;
+	if (*head == NULL)
+		return (head2);
+	else
 	{
-		n++;
-		current = current->next;
+		tmp = *head;
+		while (tmp)
+		{
+			add_nodeint_end(&head2, tmp->n);
+			tmp = tmp->next;
+		}
 	}
-	return (n);
-}
-/**
- * firstnodeend - finds specified node at h1
- * @head: head node of linked list
- * @h1: node number to find
- * Return: node at h1
- */
-listint_t *firstnodeend(listint_t *head, int h1)
-{
-	int n = 1;
-	listint_t *current;
-
-	current = head;
-	while (n < h1)
-	{
-		current = current->next;
-		n++;
-	}
-	return (current);
+	return (head2);
 }
 /**
  * reverse - reverses a linked list
- * @head: head nonde of linked list
- * @h1: itteration stop while reversing
- * Return: pointer to first node of reversed list
+ * @head2: head of list to reverse
+ * Return: reversed list
  */
-listint_t *reverse(listint_t **head, int h1)
+listint_t *reverse(listint_t **head2)
 {
-	listint_t *prev, *curr, *latter;
+	listint_t *prev, *curr, *next;
 
 	prev = NULL;
-	curr = *head;
-	latter = curr->next;
-	while (h1 > 0)
+	curr = *head2;
+	next = curr->next;
+	while (curr->next != NULL)
 	{
 		curr->next = prev;
 		prev = curr;
-		/*printf("prev-n is %i\n", prev->n);*/
-		curr = latter;
-		latter = latter->next;
-		h1--;
+		curr = next;
+		next = next->next;
 	}
-	/*printf("After reverse\n");
-	print_listint(prev);*/
+	curr->next = prev;
 	return (curr);
 }
 /**
- * is_palindrome - checks if a linked list is a palindrome
- * @head: head of list
- * Return: 1 if list is a palindrome
- * else 0 if list is not a palindrome
+ * is_palindrome - checks if a list is a palindrome
+ * @head: head of node to check
+ * Return: 0 if not a palindrome
+ * else 1 if it is infact a palindrome
  */
 int is_palindrome(listint_t **head)
 {
-	int h1 = 0, h2 = 0, nodes = 0;
-	listint_t *second, *startpoint;
+	listint_t *original, *shadow;
 
 	if (*head == NULL)
-		return (1);/*empty is a palindrome*/
-	nodes = node_number(*head);
-	if (nodes % 2 == 0)
-	{
-		h1 = nodes / 2;
-		h2 = h1 + 1;
-	}
+		return (1);
 	else
 	{
-		h1 = nodes / 2;
-		h2 = h1 + 2;
-	}
-	second = firstnodeend(*head, h2);
-	startpoint = reverse(head, h1);
-	while ((startpoint != NULL) && (second != NULL))
-	{
-		if (startpoint->n == second->n)
+		original = *head;
+		shadow = copy(&original);/*takes a double pointer; instead of head I could use &original*/
+		shadow = reverse(&shadow);
+		while ((original != NULL) && (shadow != NULL))
 		{
-
-			startpoint = startpoint->next;
-			second = second->next;
-		}
-		else
-		{
-			break;
+			if (original->n == shadow->n)
+			{
+				original = original->next;
+				shadow = shadow->next;
+			}
+			else
+			{
+				free_listint(shadow);
+				return (0);/*not a palindrome*/
+			}
 		}
 	}
-	if (second != NULL)
-		return (0);
+	free_listint(shadow);
 	return (1);
 }

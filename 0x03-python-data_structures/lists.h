@@ -21,8 +21,10 @@ listint_t *add_nodeint_end(listint_t **head, const int n);
 void free_listint(listint_t *head);
 
 int is_palindrome(listint_t **head);
-listint_t *firstnodeend(listint_t *head, int h1);
+/*listint_t *firstnodeend(listint_t *head, int h1);
 int node_number(listint_t *head);
-listint_t *reverse(listint_t **head, int h1);
+listint_t *reverse(listint_t **head, int h1);*/
+listint_t *copy(listint_t **head);
+listint_t *reverse(listint_t **head2);
 
 #endif /* LISTS_H */
