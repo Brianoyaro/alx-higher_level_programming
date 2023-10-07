@@ -72,7 +72,6 @@ listint_t *reverse(listint_t **head, int h1)
 int is_palindrome(listint_t **head)
 {
 	int h1 = 0, h2 = 0, nodes = 0;
-	/*listint_t *first, *second, *startpoint;*/
 	listint_t *second, *startpoint;
 
 	if (*head == NULL)
@@ -88,15 +87,13 @@ int is_palindrome(listint_t **head)
 		h1 = nodes / 2;
 		h2 = h1 + 2;
 	}
-	/*first = firstnodeend(*head, h1);*/
 	second = firstnodeend(*head, h2);
 	startpoint = reverse(head, h1);
-
-	/*REVERSE EITHER HALVF FIRST!!*/
 	while ((startpoint != NULL) && (second != NULL))
 	{
 		if (startpoint->n == second->n)
 		{
+
 			startpoint = startpoint->next;
 			second = second->next;
 		}
