@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 def update_dictionary(a_dictionary, key, value):
-    if not a_dictionary:
+    if a_dictionary is None:
         return None
-    return a_dictionary.update({key:value})
+    temp = {key: value}
+    return a_dictionary.update(temp)
