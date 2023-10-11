@@ -2,5 +2,6 @@
 def update_dictionary(a_dictionary, key, value):
     if a_dictionary is None:
         return None
-    temp = {key: value}
-    return a_dictionary.update(temp)
+    else:
+        temp = {key: value}
+        return a_dictionary.update(temp)
