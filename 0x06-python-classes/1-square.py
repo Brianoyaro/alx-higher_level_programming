@@ -4,7 +4,12 @@
 
 
 class Square:
-    """square class with private instance attribbute size"""
+    """square class with private instance attribute size"""
     def __init__(self, size):
-        """__init__ function that initialises the class"""
+        """
+        __init__ function that initialises the class
+
+        Arguments:
+            size: An integer representing square size
+        """
         self.__size = size
