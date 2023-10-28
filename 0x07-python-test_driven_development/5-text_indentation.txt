@@ -1,0 +1,29 @@
+First import the module and required function
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test Cases
+1) Passing non string
+>>> text_indentation(1234)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation([])
+Traceback (most recent call last):
+TypeError: text must be a string
+
+2) Passing string without delimeter
+>>> text_indentation('hello')
+hello
+
+>>> text_indentation('I am a software engineer')
+I am a software engineer
+
+3) Passing delimeters only
+>>> text_indentation(':.?')#doctest: +REPORT_NDIFF
+:
+<BLANK_LINE>
+.
+<BLANK_LINE>
+?
+<BLANK_LINE>
+<BLANK_LINE>

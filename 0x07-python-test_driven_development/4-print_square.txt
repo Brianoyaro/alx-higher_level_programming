@@ -1,0 +1,39 @@
+First import the module and function
+>>> print_square = __import__('4-print_square').print_square
+
+Test Cases
+1) Passing zero
+>>> print_square(0)
+
+2) Passing less than zero
+>>> print_square(-8)
+Traceback (most recent call last):
+TypeError: size must be >= 0
+
+>>> print_square(0.4535)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+3) Passing non integer or non float
+>>> print_square('hello')
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square([])
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+4) Passing integer
+>>> print_square(6)
+######
+######
+######
+######
+######
+######
+
+5) Passing float
+>>> print_square(12.1)
+Traceback (most recent call last):
+TypeError: size must be an integer
+

@@ -1,0 +1,67 @@
+First import the module and the function
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test Cases
+1) Successfull
+>>> matrix = [[10,13,56],[34,67,89],[234,45,-12]]
+>>> matrix_divided(matrix, 2)
+[[5.0, 6.5, 28.0], [17.0, 33.5, 44.5], [117.0, 22.5, -6.0]]
+
+>>> matrix=[[12.4644,23.2346,56.12]]
+>>> matrix_divided(matrix, 17)
+[[0.73, 1.37, 3.3]]
+
+2) Passing non-list
+>>> matrix={'1': 'aaa', '2':'bbbbbbbb', '3': 'cccc'}
+>>> matrix_divided(matrix, 12)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> string="I am a Software Engineer"
+>>> matrix_divided(string, 8)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+3)Passing an empty matrix
+>>> matrix=[[]]
+>>> matrix_divided(matrix, 4)
+[[]]
+
+4) Not passing div
+>>> matrix=[[1,2,3],[1,2,3],[1,2,3]]
+>>> matrix_divided(matrix)
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+5) Passing div as zero
+>>> matrix = [[1, 2, 3], [1, 2, 3], [1, 2, 3]]
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+>>> matrix= [[]]
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+6) Passing nothing
+>>> matrix_divided()
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+7) Div as a float
+>>> matrix = [[1,2,3], [1,2,3], [1,2,3]]
+>>> matrix_divided(matrix, 1.23)
+[[0.81, 1.63, 2.44], [0.81, 1.63, 2.44], [0.81, 1.63, 2.44]]
+
+8) A matrix with rows not same size
+>>> matrix = [[1,2],[1,2,3]]
+>>> matrix_divided(matrix, 2)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+9) Passing div as non number
+>>> matrix=[[]]
+>>> matrix_divided(matrix, 'hello')
+Traceback (most recent call last):
+TypeError: div must be a number
