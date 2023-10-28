@@ -18,12 +18,28 @@ hello
 >>> text_indentation('I am a software engineer')
 I am a software engineer
 
-3) Passing delimeters only
->>> text_indentation(':.?')#doctest: +REPORT_NDIFF
+3) Passing nothing
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+4) More Test cases
+>>> text_indentation("Engineering:")
+Engineering:
+<BLANKLINE>
+>>> text_indentation(":.?")
 :
-<BLANK_LINE>
+<BLANKLINE>
 .
-<BLANK_LINE>
+<BLANKLINE>
 ?
-<BLANK_LINE>
-<BLANK_LINE>
+<BLANKLINE>
+>>> text_indentation(":.?bleak.")
+:
+<BLANKLINE>
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+bleak.
+<BLANKLINE>

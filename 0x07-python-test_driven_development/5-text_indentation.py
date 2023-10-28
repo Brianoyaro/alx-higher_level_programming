@@ -25,4 +25,4 @@ def text_indentation(text):
             else:
                 start += i
         final += start.strip()
-        print(final)
+        print(final, end='')
