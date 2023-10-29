@@ -1,0 +1,69 @@
+First import the module and the specific function
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+Test  Cases
+1) m_a not list
+>>> matrix_mul('hello', [1,2,3])
+Traceback (most recent call last):
+TypeError: m_a must be a list
+
+2) m_b not list
+>>> matrix_mul([1,2,3], 'hello')
+Traceback (most recent call last):
+TypeError: m_b must be a list
+
+3)m_a not list of list
+>>> matrix_mul([1,2,3], [[]])
+Traceback (most recent call last):
+TypeError: m_a must be a list of lists
+
+4)m_b not list of list
+>>> matrix_mul([[1,2,3]], [1,2,3])
+Traceback (most recent call last):
+TypeError: m_b must be a list of lists
+
+5)passing either empty
+>>> matrix_mul([[1,2,3]])
+Traceback (most recent call last):
+TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+>>> matrix_mul([[]],[[]])
+Traceback (most recent call last):
+ValueError: m_a can't be empty
+>>> matrix_mul([[1,2]],[[]])
+Traceback (most recent call last):
+ValueError: m_b can't be empty
+
+6) Passing one list element not integer or float
+>>> matrix_mul([[1,2]],[[3,'H']])
+Traceback (most recent call last):
+TypeError: m_b should contain only integers or floats
+>>> matrix_mul([['Brian',12]],[[3,45]])
+Traceback (most recent call last):
+TypeError: m_a should contain only integers or floats
+
+7)Matrices with unequal rows i.e not rectangular
+>>> matrix_mul([[1,2],[1,2],[1,2,3]],[[3,5,6]])
+Traceback (most recent call last):
+TypeError: each row of m_a must be of the same size
+>>> matrix_mul([[100,12]],[[3,45],[1,2,3]])
+Traceback (most recent call last):
+TypeError: each row of m_b must be of the same size
+
+8) If m_a and m_b can not be multiplied together
+>>> matrix_mul([[100,12]],[[3,4,5],[1,2,3],[1,2,3]])
+Traceback (most recent call last):
+ValueError: m_a and m_b can't be multiplied
+
+9)Passing no argument
+>>> matrix_mul()
+Traceback (most recent call last):
+TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+10) Success Cases
+>>> matrix_mul([[100,12]],[[3,4,5],[1,2,3]])
+[[312, 424, 536]]
+>>> matrix_mul([[1,2,3],[1,2,3],[1,2,3]], [[1,2,3],[1,2,3],[1,2,3]])
+[[6, 12, 18], [6, 12, 18], [6, 12, 18]]
+
+
+
