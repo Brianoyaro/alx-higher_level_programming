@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 """Module defining a rectangle
 """
+
+
 class Rectangle:
+    """defines a rectangle
+    """
     def __init__(self, width=0, height=0):
         """initialises an object
 
