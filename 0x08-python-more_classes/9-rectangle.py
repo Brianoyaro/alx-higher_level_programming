@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 """Module defining a rectangle
 """
+
+
 class Rectangle:
+    """defines a rectangle
+    """
     number_of_instances = 0
     print_symbol = '#'
 
@@ -65,6 +69,8 @@ class Rectangle:
             return 2 * (self.__height + self.__width)
 
     def __str__(self):
+        """printable representation of rectangle
+        """
         val = ''
         if self.__width == 0 or self.__height == 0:
             return val
@@ -76,6 +82,8 @@ class Rectangle:
             return val
 
     def __repr__(self):
+        """debugging representation of rectangle
+        """
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):

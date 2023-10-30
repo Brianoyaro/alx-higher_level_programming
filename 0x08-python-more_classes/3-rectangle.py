@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 """Module defining a rectangle
 """
+
+
 class Rectangle:
+    """defines a rectangle
+    """
     def __init__(self, width=0, height=0):
         """initialises an object
 
@@ -61,6 +65,8 @@ class Rectangle:
             return 2 * (self.__height + self.__width)
 
     def __str__(self):
+        """sets up nice representation of the rectangle
+        """
         val = ''
         if self.__width == 0 or self.__height == 0:
             return val
