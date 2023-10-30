@@ -74,17 +74,11 @@ class Rectangle:
         val = ""
         if self.__width == 0 or self.__height == 0:
             return val
-        """else:
-            for i in range(self.__height):
-                for j in range(self.__width):
-                    print(self.print_symbol, end='')
-                print()
-            return val
-        """
         if not isinstance(self.print_symbol, str):
             self.print_symbol = str(self.print_symbol)
-        for i in range(self.__height):
+        for i in range(self.__height - 1):
             val += (self.print_symbol * self.__width) + '\n'
+        val += (self.print_symbol * self.__width)
         return val
 
     def __repr__(self):
