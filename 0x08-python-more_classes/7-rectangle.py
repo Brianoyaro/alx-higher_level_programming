@@ -71,15 +71,21 @@ class Rectangle:
     def __str__(self):
         """printable representation of a rectangle
         """
-        val = ''
+        val = ""
         if self.__width == 0 or self.__height == 0:
             return val
-        else:
+        """else:
             for i in range(self.__height):
                 for j in range(self.__width):
                     print(self.print_symbol, end='')
                 print()
             return val
+        """
+        if not isinstance(self.print_symbol, str):
+            self.print_symbol = str(self.print_symbol)
+        for i in range(self.__height):
+            val += (self.print_symbol * self.__width) + '\n'
+        return val
 
     def __repr__(self):
         """debugging representation of a rectangle
