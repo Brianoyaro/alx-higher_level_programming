@@ -71,8 +71,9 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return val
         else:
-            for i in range(self.__height):
+            for i in range(self.__height - 1):
                 val += (self.__width * '#') + '\n'
+            val += (self.__width * '#')
             return val
 
     def __repr__(self):
