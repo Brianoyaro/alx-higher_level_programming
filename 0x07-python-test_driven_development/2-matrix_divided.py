@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """module handling matrix division
 """
+
+
 def matrix_divided(matrix, div):
     """
         function handling matrix division
