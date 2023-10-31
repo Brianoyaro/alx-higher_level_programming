@@ -15,6 +15,7 @@ class Rectangle:
         """
         self.__width = width
         self.__height = height
+
     @property
     def width(self):
         """returns with from private attribute
