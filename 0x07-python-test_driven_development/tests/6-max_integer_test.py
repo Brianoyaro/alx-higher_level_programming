@@ -24,6 +24,7 @@ class TestMaxInteger(unittest.TestCase):
         """tests several variation of integer list argument
         """
         self.assertEqual(max_integer([1,1,1,1,1]), 1)
+        self.assertEqual(max_integer([1]), 1)
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
         self.assertEqual(max_integer([9, 2, 5, 9, 2]), 9)
         self.assertEqual(max_integer([9, 8, 7, 6, 5, 4, 3, 2, 1]), 9)
