@@ -19,4 +19,4 @@ class Square(mod):
     def __str__(self):
         """returns a nicely printable string
         """
-        return "[Rectangle] {}/{}".format(self.__size, self.__size)
+        return "[Square] {}/{}".format(self.__size, self.__size)
