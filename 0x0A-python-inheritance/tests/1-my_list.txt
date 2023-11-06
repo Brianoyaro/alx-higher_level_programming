@@ -1,0 +1,22 @@
+First import necessary modules
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list = MyList()
+
+Test Cases
+>>> my_list.append(1)
+>>> my_list.append(67)
+>>> my_list.append(67122223113)
+>>> my_list.append(90708671713)
+>>> my_list
+[1, 67, 67122223113, 90708671713]
+>>> my_list.pop()
+90708671713
+>>> my_list
+[1, 67, 67122223113]
+>>> print(my_list)
+[1, 67, 67122223113]
+>>> my_list.print_sorted()
+[1, 67, 67122223113]
+>>> print(my_list)
+[1, 67, 67122223113]
