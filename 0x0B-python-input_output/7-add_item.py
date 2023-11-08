@@ -5,13 +5,14 @@
 to_json = __import__('5-save_to_json_file').save_to_json_file
 from_json = __import__('6-load_from_json_file').load_from_json_file
 import sys
+import os
 
 
 filename = "add_item.json"
-args = sys.argv
-value = ''
-for i, val in  enumerate(args):
-    if i != 0:
-        value += val
-to_json(list(value), filename)
+if os.path.exists(filename):
+    val = from_json(filename)
+    val += sys.argv[1:]
+    to_json(list(val), filename)
 
+else:
+    to_json(sys.argv[1:], filename)
