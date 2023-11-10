@@ -102,7 +102,7 @@ class Rectangle(base.Base):
     def y(self, value):
         """y setter method
         """
-        if not isinstance(y, int):
+        if not isinstance(value, int):
             raise TypeError("y must be an integer")
         else:
             if (value < 0):
@@ -157,3 +157,8 @@ class Rectangle(base.Base):
                     self.__x = val
                 elif key == 'y':
                     self.__y = val
+
+    def to_dictionary(self):
+        """returns dictionary representation of Rectangle instance
+        """
+        return self.__dict__
