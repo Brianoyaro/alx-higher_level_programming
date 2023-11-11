@@ -67,7 +67,8 @@ class Base:
         if os.path.isfile(filename):
             with open(filename, mode='r', encoding='utf-8') as f:
                 temp = f.read()
-            list_of_instances = json.loads(temp)
+            # list_of_instances = json.loads(temp)
+            list_of_instances = cls.from_json_string(temp)
             final_list = []
             for val in list_of_instances:
                 dummy = cls.create(**val)
