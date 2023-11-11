@@ -7,6 +7,9 @@ import models.rectangle as rectangle
 class Square(rectangle.Rectangle):
     """square class
     """
+    filename_json = 'Square.json'
+    filename_csv = 'Square.csv'
+
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
 
@@ -35,7 +38,7 @@ class Square(rectangle.Rectangle):
                 self.width = val
                 self.height = val
 
-    def update(self,*args, **kwargs):
+    def update(self, *args, **kwargs):
         """reassigns attributes to an instance
         """
         if args and len(args) > 0:
@@ -65,5 +68,10 @@ class Square(rectangle.Rectangle):
     def to_dictionary(self):
         """returns a dictionary of Square instance
         """
-        #return self.__dict__
-        return {'id': self.id, 'x': self.x, 'size': self.width, 'y': self.y}
+        # return {'id': self.id, 'x': self.x, 'size': self.width, 'y': self.y}
+        temp_dict = {}
+        temp_dict['id'] = self.id
+        temp_dict['x'] = self.x
+        temp_dict['size'] = self.width
+        temp_dict['y'] = self.y
+        return temp_dict

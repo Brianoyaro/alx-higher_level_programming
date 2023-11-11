@@ -7,6 +7,9 @@ import models.base as base
 class Rectangle(base.Base):
     """rectangle class which inherits from Base
     """
+    filename_json = 'Rectangle.json'
+    filename_csv = 'Rectangle.csv'
+
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         if not isinstance(width, int):
@@ -161,5 +164,10 @@ class Rectangle(base.Base):
     def to_dictionary(self):
         """returns dictionary representation of Rectangle instance
         """
-        #return self.__dict__
-        return {'x': self.__x, 'y': self.__y, 'id': self.id, 'height': self.__height, 'width': self.__width}
+        dict_temp = {}
+        dict_temp['x'] = self.__x
+        dict_temp['y'] = self.__y
+        dict_temp['id'] = self.id
+        dict_temp['height'] = self.__height
+        dict_temp['width'] = self.__width
+        return dict_temp
