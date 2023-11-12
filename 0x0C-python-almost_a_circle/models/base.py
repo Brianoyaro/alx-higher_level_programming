@@ -85,7 +85,8 @@ class Base:
         list_dict = []
         # save every instance of list_objs to json serializable
         for val in list_objs:
-            value = val.to_dictionary()
+            # value = val.to_dictionary() 'bug may be in csv file-format
+            value = val.to_dictionary_csv()
             list_dict.append(value)
         with open(filename, mode='w', encoding='utf-8') as f:
             f.write(json.dumps(list_dict))

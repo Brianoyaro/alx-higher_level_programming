@@ -75,3 +75,13 @@ class Square(rectangle.Rectangle):
         temp_dict['size'] = self.width
         temp_dict['y'] = self.y
         return temp_dict
+
+    def to_dictionary_csv(self):
+        """returns csv format dictionary representation
+        """
+        temp_dict = {}
+        temp_dict['id'] = self.id
+        temp_dict['size'] = self.width
+        temp_dict['x'] = self.x
+        temp_dict['y'] = self.y
+        return temp_dict

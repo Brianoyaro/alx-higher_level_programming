@@ -141,25 +141,25 @@ class Rectangle(base.Base):
                 if i == 0:
                     self.id = val
                 elif i == 1:
-                    self.__width = val
+                    self.width = val
                 elif i == 2:
-                    self.__height = val
+                    self.height = val
                 elif i == 3:
-                    self.__x = val
+                    self.x = val
                 elif i == 4:
-                    self.__y = val
+                    self.y = val
         else:
             for key, val in kwargs.items():
                 if key == 'id':
                     self.id = val
                 elif key == 'width':
-                    self.__width = val
+                    self.width = val
                 elif key == 'height':
-                    self.__height = val
+                    self.height = val
                 elif key == 'x':
-                    self.__x = val
+                    self.x = val
                 elif key == 'y':
-                    self.__y = val
+                    self.y = val
 
     def to_dictionary(self):
         """returns dictionary representation of Rectangle instance
@@ -170,4 +170,15 @@ class Rectangle(base.Base):
         dict_temp['id'] = self.id
         dict_temp['height'] = self.__height
         dict_temp['width'] = self.__width
+        return dict_temp
+
+    def to_dictionary_csv(self):
+        """returns the csv dictionary representation
+        """
+        dict_temp = {}
+        dict_temp['id'] = self.id
+        dict_temp['width'] = self.__width
+        dict_temp['height'] = self.__height
+        dict_temp['x'] = self.__x
+        dict_temp['y'] = self.__y
         return dict_temp
