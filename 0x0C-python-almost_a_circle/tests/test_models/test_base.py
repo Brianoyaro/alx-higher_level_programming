@@ -89,5 +89,5 @@ class TestBase(unittest.TestCase):
         Rectangle.save_to_file_csv([r1])
         with open('Rectangle.csv', mode='r', encoding='utf-8') as f:
             temp = f.read()
-        ans = '[{"x": 1, "y": 1, "id": 1, "height": 1, "width": 1}]'
+        ans = '[{"id": 1, "width": 1, "height": 1, "x": 1, "y": 1}]'
         self.assertEqual(temp, ans)
