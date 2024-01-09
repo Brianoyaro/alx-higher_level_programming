@@ -4,8 +4,6 @@ class Square extends Square_ {
   charPrint (c) {
     if (typeof c === 'undefined') {
       c = 'X';
-    } else {
-      c = c;
     }
     let i;
     let j;
