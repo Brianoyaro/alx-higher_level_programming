@@ -5,7 +5,7 @@ class Square extends Square_ {
     if (typeof c === 'undefined') {
       c = 'X';
     } else {
-      c = 'C';
+      c = c;
     }
     let i;
     let j;
