@@ -15,7 +15,8 @@ if __name__ == "__main__":
     """create a new session to manage your tranasction"""
     session = Session()
     """add a new entry"""
-    new = State('Louisiana')
+    new = State()
+    new.name = 'Louisiana'
     session.add(new)
     session.commit()
     """retrieve the entries"""
