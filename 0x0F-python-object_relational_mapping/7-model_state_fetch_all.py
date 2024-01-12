@@ -14,7 +14,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     """create a new session to manage your tranasction"""
     session = Session()
-    for state in session.query(State).order_by(state_id).all():
+    for state in session.query(State).order_by(State_id).all():
         print("{}: {}".fomat(state.id, state.name))
     """close the session"""
     session.close()
