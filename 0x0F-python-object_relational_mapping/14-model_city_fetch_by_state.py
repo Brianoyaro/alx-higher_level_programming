@@ -18,6 +18,6 @@ if __name__ == "__main__":
     result = session.query(State, City).filter(
         City.state_id == State.id).order_by(City.id).all()
     for state, city in result:
-        print("{}: ({}) {}".fomat(state.name, city.id, city.name))
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
     """close the session"""
     session.close()
