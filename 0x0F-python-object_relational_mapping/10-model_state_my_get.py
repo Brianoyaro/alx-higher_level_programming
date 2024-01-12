@@ -14,7 +14,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     """create a new session to manage your tranasction"""
     session = Session()
-    state = session.query(State).filter_by(name=sys.argv[4])
+    state = session.query(State).filter_by(name=sys.argv[4]).all()
     if (state):
         print("{}".fomat(state.id))
     else:
