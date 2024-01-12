@@ -17,7 +17,9 @@ if __name__ == "__main__":
     session = Session()
     result = session.query(State, City).filter(
         City.state_id == State.id).order_by(City.id).all()
-    for state, city in result:
-        print("{}: ({}) {}".format(state.name, city.id, city.name))
+    """for state, city in result:
+        print("{}: ({}) {}".format(state.name, city.id, city.name))"""
+    for c, s in session.query(City, State).filter(City.state_id == State.id):
+        print("{}: ({}) {}".format(s.name, c.id, c.name))
     """close the session"""
     session.close()
