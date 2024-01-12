@@ -20,7 +20,7 @@ if __name__ == "__main__":
     stateee.name = "California"
     cityyy = City()
     city_.name = "San Francisco"
-    state.cities.append(cityyy)
+    stateee.cities.append(cityyy)
     session.add(state_)
     session.add(city_)
 
