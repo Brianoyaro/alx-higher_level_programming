@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """7-model_state_fetch_all.py module"""
-from state_model import Base, State
+from model_state import Base, State
 import sys
 from sqlalchemy import (create_engine)
 
