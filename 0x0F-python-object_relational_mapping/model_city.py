@@ -7,7 +7,6 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 
 class City(Base):
     """state class"""
-
     __tablename__ = 'cities'
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)

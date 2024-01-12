@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""7-model_state_fetch_all.py module"""
+"""14-model_state_fetch_all.py module"""
 from model_state import Base, State
 from model_city import City
 import sys
