@@ -19,8 +19,7 @@ if __name__ == "__main__":
     new.name = 'Louisiana'
     session.add(new)
     session.commit()
-    """retrieve the entries"""
-    for state in session.query(State).order_by(State.id).all():
-        print("{}: {}".fomat(state.id, state.name))
+
+    print(new.id)
     """close the session"""
     session.close()
