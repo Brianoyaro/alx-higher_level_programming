@@ -1,6 +1,6 @@
 #!/usr/bin/python3
+"""model_state module"""
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy import Column, Integer, String
 
 
