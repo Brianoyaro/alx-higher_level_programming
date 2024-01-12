@@ -15,12 +15,12 @@ if __name__ == "__main__":
     """create a connection to the database"""
     curr = conn.cursor()
     name = arg[4]
-    query = "SELECT cities.name\
-            FROM cities\
-            INNER JOIN states\
-            ON cities.state_id=states.id\
-            WHERE states.name LIKE %s\
-            ORDER BY cities.id ASC;"
+    query = """SELECT cities.name
+            FROM cities
+            INNER JOIN states
+            ON cities.state_id=states.id
+            WHERE states.name LIKE %s
+            ORDER BY cities.id ASC;"""
     curr.execute(query, (name,))
     """fetch query results"""
     rows = curr.fetchall()
