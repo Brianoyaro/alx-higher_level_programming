@@ -16,10 +16,10 @@ if __name__ == "__main__":
     """create a new session to manage your tranasction"""
     session = Session()
 
-    state_ = State()
-    state_.name = "California"
-    city_ - City()
-    state.cities.append(city_)
+    stateee = State()
+    stateee.name = "California"
+    cityyy = City()
+    state.cities.append(cityyy)
     city_.name = "San Francisco"
     session.add(state_)
     session.add(city_)
