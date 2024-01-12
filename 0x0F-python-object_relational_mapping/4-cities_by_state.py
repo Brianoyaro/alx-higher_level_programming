@@ -12,18 +12,18 @@ if __name__ == "__main__":
                            user=arg[1],
                            passwd=arg[2],
                            db=arg[3])
-"""create a connection to the database"""
-curr = conn.cursor
-curr.execute("SELECT cities.id, cities.name, states.name\
-        FROM cities\
-        JOIN states\
-        on cities.state_id=states.id\
-        ORDER BY cities.id ASC")
-"""fetch query results"""
-rows = curr.fetchall()
-for row in rows:
-    print(row)
-"""close cursor connection"""
-curr.close()
-"""close database connection"""
-conn.close()
+    """create a connection to the database"""
+    curr = conn.cursor()
+    curr.execute("SELECT cities.id, cities.name, states.name\
+            FROM cities\
+            JOIN states\
+            on cities.state_id=states.id\
+            ORDER BY cities.id ASC")
+    """fetch query results"""
+    rows = curr.fetchall()
+    for row in rows:
+        print(row)
+    """close cursor connection"""
+    curr.close()
+    """close database connection"""
+    conn.close()

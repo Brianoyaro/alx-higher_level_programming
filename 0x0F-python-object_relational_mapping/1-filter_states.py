@@ -13,7 +13,7 @@ if __name__ == "__main__":
                            passwd=arg[2],
                            db=arg[3])
     """create a connection to the database"""
-    curr = conn.cursor
+    curr = conn.cursor()
     curr.execute("SELECT * FROM states\
             WHERE name LIKE 'N%'\
             ORDER BY states.id ASC")
