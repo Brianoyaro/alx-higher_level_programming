@@ -8,7 +8,7 @@ if __name__ == "__main__":
     try:
         urllib.request.urlopen(sys.argv[1])
     except urllib.error.HTTPError as e:
-        print(e.code)
+        print("Error code:", e.code)
     else:
         with urllib.request.urlopen(sys.argv[1]) as response:
             body = response.read()
