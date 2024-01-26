@@ -10,10 +10,10 @@ if __name__ == "__main__":
         value = {'q': ""}
     else:
         value = {'q': sys.argv[1]}
-    response = requests.post(url, value)
-    if 'application/json' in response.headers.get('Content-Type', ''):
-        if response.text:
-            print("[{}] {}".format(response.json()['id'], response.json()['name']))
+    res = requests.post(url, value)
+    if 'application/json' in res.headers.get('Content-Type', ''):
+        if res.text:
+            print("[{}] {}".format(res.json()['id'], res.json()['name']))
         else:
             print("No result")
     else:
