@@ -13,7 +13,7 @@ if __name__ == "__main__":
     response = requests.post(url, value)
     if 'application/json' in response.headers.get('Content-Type', ''):
         if response.text:
-            print("[{}] {}".format(response.get('id'), response.get('name')))
+            print("[{}] {}".format(response.json()['id'], response.json()['name']))
         else:
             print("No result")
     else:
